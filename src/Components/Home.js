@@ -3,31 +3,31 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import { FaRegListAlt } from 'react-icons/fa';
 
-import { GiScrollUnfurled } from "react-icons/gi";
-import { GiScreaming } from "react-icons/gi";
-import { GiMusicalNotes } from "react-icons/gi";
-import { GiMagnifyingGlass } from "react-icons/gi";
-import { FaRegKissBeam } from "react-icons/gi";
-import { GiMaterialsScience } from "react-icons/gi";
-import { GiHalfDead } from "react-icons/gi";
-import { GiGreatWarTank } from "react-icons/gi";
-import { GiCowboyBoot } from "react-icons/gi";
+// import { GiScrollUnfurled } from "react-icons/gi";
+// import { GiScreaming } from "react-icons/gi";
+// import { GiMusicalNotes } from "react-icons/gi";
+// import { GiMagnifyingGlass } from "react-icons/gi";
+// import { FaRegKissBeam } from "react-icons/gi";
+// import { GiMaterialsScience } from "react-icons/gi";
+// import { GiHalfDead } from "react-icons/gi";
+// import { GiGreatWarTank } from "react-icons/gi";
+// import { GiCowboyBoot } from "react-icons/gi";
 
 
 // ....
 
-const icons = [
-	"GiScrollUnfurled",
-	"GiScreaming",
-	"GiMusicalNotes",
-	"GiMagnifyingGlass",
-	"FaRegKissBeam",
-	"GiMaterialsScience",
-	"GiHalfDead",
-	"GiGreatWarTank",
-	"GiCowboyBoot",
-	// ...
-];
+// const icons = [
+// 	"GiScrollUnfurled",
+// 	"GiScreaming",
+// 	"GiMusicalNotes",
+// 	"GiMagnifyingGlass",
+// 	"FaRegKissBeam",
+// 	"GiMaterialsScience",
+// 	"GiHalfDead",
+// 	"GiGreatWarTank",
+// 	"GiCowboyBoot",
+// 	// ...
+// ];
 
 
 const Array = [
@@ -96,13 +96,13 @@ const Home = () => {
 
 					{
 						Array.map((item, idx) => {
-							const Icon = icons[idx];
+							// const Icon = icons[idx];
 							return (
 								<div style={{}} >
 									<SwiperSlide >
 										<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '15px' }}>
 											<div className='col-md-1' style={{ marginTop: '80px', }}>
-												<button type="button" class="btn btn-outline-secondary btn-lg" style={{ width: '150px' }} onClick={() => submitHandler(item.Name)}>  <Icon />{item.Name}</button>
+												<button type="button" class="btn btn-outline-secondary btn-lg" style={{ width: '150px' }} onClick={() => submitHandler(item.Name)}> {item.Name}</button>
 											</div>
 										</div>
 									</SwiperSlide>
