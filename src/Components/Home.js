@@ -26,7 +26,7 @@ import { FaRegListAlt } from 'react-icons/fa';
 // 	"GiHalfDead",
 // 	"GiGreatWarTank",
 // 	"GiCowboyBoot",
-// 	// ...
+// 	// ...333
 // ];
 
 
@@ -116,7 +116,7 @@ const Home = () => {
 			</div >
 			<div className='row' style={{ backgroundColor: '#F0F8FF' }}>
 
-				{
+				{data != [] ?
 					data.map(news =>
 						<div className='col-md-4' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 							<div className='card' style={{ width: '350px', margin: '10px', borderRadius: '20px' }}>
@@ -138,6 +138,8 @@ const Home = () => {
 
 							</div>
 						</div>)
+					:
+					null
 				}
 			</div>
 		</>
