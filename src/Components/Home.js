@@ -1,39 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
-import { FaRegListAlt } from 'react-icons/fa';
-
-// import { GiScrollUnfurled } from "react-icons/gi";
-// import { GiScreaming } from "react-icons/gi";
-// import { GiMusicalNotes } from "react-icons/gi";
-// import { GiMagnifyingGlass } from "react-icons/gi";
-// import { FaRegKissBeam } from "react-icons/gi";
-// import { GiMaterialsScience } from "react-icons/gi";
-// import { GiHalfDead } from "react-icons/gi";
-// import { GiGreatWarTank } from "react-icons/gi";
-// import { GiCowboyBoot } from "react-icons/gi";
 
 
-// ....
 
-// const icons = [
-// 	"GiScrollUnfurled",
-// 	"GiScreaming",
-// 	"GiMusicalNotes",
-// 	"GiMagnifyingGlass",
-// 	"FaRegKissBeam",
-// 	"GiMaterialsScience",
-// 	"GiHalfDead",
-// 	"GiGreatWarTank",
-// 	"GiCowboyBoot",
-// 	// ...333
-// ];
 
 
 const Array = [
 	{
 		Name: 'All'
-
 	},
 	{
 		Name: 'Bussiness'
@@ -76,8 +51,8 @@ const Home = () => {
 	}
 	return (
 		<>
-			<div >
-				<Swiper style={{ backgroundColor: '#F0F8FF' }}
+			<div style={{ backgroundColor: '#F0F8FF' }}>
+				<Swiper
 
 					breakpoints={{
 						// when window width is >= 640px
@@ -95,51 +70,49 @@ const Home = () => {
 				>
 
 					{
-						Array.map((item, idx) => {
-							// const Icon = icons[idx];
-							return (
-								<div style={{}} >
-									<SwiperSlide >
-										<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '15px' }}>
-											<div className='col-md-1' style={{ marginTop: '80px', }}>
-												<button type="button" class="btn btn-outline-secondary btn-lg" style={{ width: '150px' }} onClick={() => submitHandler(item.Name)}> {item.Name}</button>
-											</div>
+						Array.map(item =>
+							<div >
+								<SwiperSlide>
+									<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '15px' }}>
+										<div className='col-md-1' style={{ marginTop: '80px', }}>
+											<button type="button" class="btn btn-outline-secondary btn-lg" style={{ width: '150px' }} onClick={() => submitHandler(item.Name)}>{item.Name}</button>
 										</div>
-									</SwiperSlide>
-								</div>
-							)
-
-						})}
+									</div>
+								</SwiperSlide>
+							</div>
+						)
+					}
 
 				</Swiper>
-
 			</div >
 			<div className='row' style={{ backgroundColor: '#F0F8FF' }}>
 
-				{data != [] ?
-					data.map(news =>
-						<div className='col-md-4' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-							<div className='card' style={{ width: '350px', margin: '10px', borderRadius: '20px' }}>
-								<img className='card-img-top img' src={news.urlToImage} height="250" width="260"
-									style={{ borderTopLeftRadius: '20px', borderTopRightRadius: '20px' }} />
-								<div className='card-body text-center' >
-									<h6>{news.title}</h6>
-									<p>{news.description}</p>
-									<div style={{ display: 'flex', justifyContent: 'space-between' }}>
-										<p style={{ fontSize: '10px' }}> Author : <strong>{news.author}</strong></p>
-										<p style={{ fontSize: '10px' }}> <strong>Date : </strong>{news.publishedAt}</p>
+				{
+					data !== [] ?
+						data.map(news =>
+							<div className='col-md-4' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+								<div className='card' style={{ width: '350px', margin: '10px', borderRadius: '20px' }}>
+									<img className='card-img-top' src={news.urlToImage} height="250" width="260"
+										style={{ borderTopLeftRadius: '20px', borderTopRightRadius: '20px' }} alt="img" />
+									<div className='card-body text-center' >
+										<h6>{news.title}</h6>
+										<p>{news.description}</p>
+										<div style={{ display: 'flex', justifyContent: 'space-between' }}>
+											<p style={{ fontSize: '10px' }}> Author : <strong>{news.author}</strong></p>
+											<p style={{ fontSize: '10px' }}> <strong>Date : </strong>{news.publishedAt}</p>
+
+										</div>
+
+										< a href={news.url} target="_blank" rel="noopener noreferrer " > <button type="button" class="btn btn-primary btn-sm" >Read More</button></a >
+
 
 									</div>
 
-									< a href={news.url} target="_blank" rel="noopener noreferrer " > <button type="button" class="btn btn-primary btn-sm" >Read More</button></a >
-
-
 								</div>
-
 							</div>
-						</div>)
-					:
-					null
+						)
+						:
+						null
 				}
 			</div>
 		</>
