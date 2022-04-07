@@ -34,7 +34,7 @@ const Array = [
 ]
 const Home = () => {
 
-	const [data, setData] = useState([])
+	const [data, setData] = useState("")
 	useEffect(() => {
 		submitHandler('All')
 	}, [])
@@ -75,7 +75,7 @@ const Home = () => {
 								<SwiperSlide>
 									<div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', margin: '15px' }}>
 										<div className='col-md-1' style={{ marginTop: '80px', }}>
-											<button type="button" class="btn btn-outline-secondary btn-lg" style={{ width: '150px' }} onClick={() => submitHandler(item.Name)}>{item.Name}</button>
+											<button type="button" className="btn btn-outline-secondary btn-lg" style={{ width: '150px' }} onClick={() => submitHandler(item.Name)}>{item.Name}</button>
 										</div>
 									</div>
 								</SwiperSlide>
@@ -88,9 +88,9 @@ const Home = () => {
 			<div className='row' style={{ backgroundColor: '#F0F8FF' }}>
 
 				{
-					data !== [] && data !== undefined ?
-						data.map(news =>
-							<div className='col-md-4' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+					data != "" ?
+						data.map((news, index) =>
+							<div key={index} className='col-md-4' style={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
 								<div className='card' style={{ width: '350px', margin: '10px', borderRadius: '20px' }}>
 									<img className='card-img-top' src={news.urlToImage} height="250" width="260"
 										style={{ borderTopLeftRadius: '20px', borderTopRightRadius: '20px' }} alt="img" />
@@ -103,7 +103,7 @@ const Home = () => {
 
 										</div>
 
-										< a href={news.url} target="_blank" rel="noopener noreferrer " > <button type="button" class="btn btn-primary btn-sm" >Read More</button></a >
+										< a href={news.url} target="_blank" rel="noopener noreferrer " > <button type="button" className="btn btn-primary btn-sm" >Read More</button></a >
 
 
 									</div>
